@@ -27,6 +27,9 @@
     <title>Srinath Portfolio</title>
   </head>
   <body>
+    <!-- Theme Switcher Bar -->
+    <!-- Removed: theme-switcher bar and color buttons -->
+    <!-- End Theme Switcher Bar -->
     <!-- navbar -->
     <nav class="navbar">
       <div class="nav-content">
@@ -46,20 +49,28 @@
     </nav>
 
     <!-- Header -->
-    <header id="home" class="header">
+    <header id="home" class="header fade-in">
       <div class="header-content">
         <div class="header-text">
-          <h1>Hi,Itz Srinathh!!</h1>
+          <h1><span id="typewriter"></span></h1>
           <p>
             A passionate Full Stack Developer crafting beautiful and functional
             web experiences
           </p>
-          <a href="#contact" class="cta-btn">Get In Touch</a>
+          <div class="hero-btns">
+            <a href="#contact" class="cta-btn">Hire Me</a>
+            <a href="resume.pdf" class="cta-btn" download>Download Resume</a>
+          </div>
+          <div class="hero-socials">
+            <a href="https://www.linkedin.com/in/srinath-potharaju/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/sriinathh" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="mailto:sri.nxth@​yahoo.com" title="Email"><i class="fas fa-envelope"></i></a>
+          </div>
         </div>
       </div>
     </header>
     <!-- About -->
-    <section id="about" class="about">
+    <section id="about" class="about fade-in">
       <div class="about-content">
         <div class="profile-img">
           <img
@@ -87,9 +98,17 @@
     <!-- Skills -->
     
       <!-- Skills Section -->
-<section class="skills" id="skills">
+<section class="skills fade-in" id="skills">
   <div class="skills-content">
     <h2 class="section-title">My Skills</h2>
+    <div class="skills-bars">
+      <div class="skill-bar"><span>JavaScript</span><div class="bar-bg"><div class="bar-fill" data-width="90%"></div></div></div>
+      <div class="skill-bar"><span>Node.js</span><div class="bar-bg"><div class="bar-fill" data-width="85%"></div></div></div>
+      <div class="skill-bar"><span>React</span><div class="bar-bg"><div class="bar-fill" data-width="80%"></div></div></div>
+      <div class="skill-bar"><span>Database</span><div class="bar-bg"><div class="bar-fill" data-width="75%"></div></div></div>
+      <div class="skill-bar"><span>UI/UX Design</span><div class="bar-bg"><div class="bar-fill" data-width="70%"></div></div></div>
+      <div class="skill-bar"><span>Cybersecurity</span><div class="bar-bg"><div class="bar-fill" data-width="60%"></div></div></div>
+    </div>
     <div class="skills-grid">
       
       <!-- JavaScript -->
@@ -166,69 +185,83 @@
   </div>
 </section>
 
+<!-- Modal for project details -->
+<div id="project-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <div id="modal-body"></div>
+    <div id="modal-tech"></div>
+    <div id="modal-links" class="mt-4 flex gap-4"></div>
+  </div>
+</div>
+<!-- Scroll to top button -->
+<button id="scrollToTop" title="Go to top">&#8679;</button>
+
 
     </section>
     <!-- Works -->
-    <section id="works" class="works">
+    <section id="works" class="works fade-in">
       <div class="works-content">
         <h2 class="section-title">Recent Works</h2>
-        <div class="works-grid">
+        <!-- Project Filter/Search -->
+        <input id="project-search" type="text" placeholder="Search projects or tech..." class="project-search mb-6 px-4 py-2 rounded border w-full max-w-md block mx-auto" />
+        <div class="works-grid" id="projects-grid">
           <!-- work 1 -->
-          <div class="work-card">
-            <img
-              src="https://images.pexels.com/photos/38519/macbook-laptop-ipad-apple-38519.jpeg?auto=compress&cs=tinysrgb&w=1200"
-              alt="project 1"
-            />
+          <div class="work-card glass" data-title="E-Commerce Platform" data-tech="MERN,React,Node.js,Express,MongoDB">
+            <img src="https://images.pexels.com/photos/38519/macbook-laptop-ipad-apple-38519.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="project 1" />
             <div class="work-info">
               <div>
                 <h3>E-Commerce Platform</h3>
                 <p>A full-stack e-commerce solution built with MERN stack</p>
+                <div class="tech-badges">
+                  <span class="badge" data-tech="MERN">MERN</span>
+                  <span class="badge" data-tech="React">React</span>
+                  <span class="badge" data-tech="Node.js">Node.js</span>
+                  <span class="badge" data-tech="Express">Express</span>
+                  <span class="badge" data-tech="MongoDB">MongoDB</span>
+                </div>
               </div>
               <div class="work-link">
-                <a href="#">
-                  <i class="fas fa-external-link-alt"></i>
-                  Live
-                </a>
+                <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live</a>
+                <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
               </div>
             </div>
           </div>
           <!-- work 2 -->
-          <div class="work-card">
-            <img
-              src="https://images.pexels.com/photos/8152735/pexels-photo-8152735.jpeg?auto=compress&cs=tinysrgb&w=1200"
-              alt="project 2"
-            />
+          <div class="work-card glass" data-title="Task Management App" data-tech="React,Firebase,Realtime">
+            <img src="https://images.pexels.com/photos/8152735/pexels-photo-8152735.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="project 2" />
             <div class="work-info">
               <div>
                 <h3>Task Management App</h3>
-                <p>
-                  Real-time task management application with React and Firebase
-                </p>
+                <p>Real-time task management application with React and Firebase</p>
+                <div class="tech-badges">
+                  <span class="badge" data-tech="React">React</span>
+                  <span class="badge" data-tech="Firebase">Firebase</span>
+                  <span class="badge" data-tech="Realtime">Realtime</span>
+                </div>
               </div>
-              <div class="work-links">
-                <a href="#">
-                  <i class="fas fa-external-link-alt"></i>
-                  Live
-                </a>
+              <div class="work-link">
+                <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live</a>
+                <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
               </div>
             </div>
           </div>
           <!-- work 3 -->
-          <div class="work-card">
-            <img
-              src="https://images.pexels.com/photos/5744248/pexels-photo-5744248.jpeg?auto=compress&cs=tinysrgb&w=1200"
-              alt="project 2"
-            />
+          <div class="work-card glass" data-title="Social Media Dashboard" data-tech="Analytics,Dashboard,Visualization">
+            <img src="https://images.pexels.com/photos/5744248/pexels-photo-5744248.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="project 3" />
             <div class="work-info">
               <div>
                 <h3>Social Media Dashboard</h3>
                 <p>Analytics dashboard with real-time data visualization</p>
+                <div class="tech-badges">
+                  <span class="badge" data-tech="Analytics">Analytics</span>
+                  <span class="badge" data-tech="Dashboard">Dashboard</span>
+                  <span class="badge" data-tech="Visualization">Visualization</span>
+                </div>
               </div>
-              <div class="work-links">
-                <a href="#">
-                  <i class="fas fa-external-link-alt"></i>
-                  Live
-                </a>
+              <div class="work-link">
+                <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live</a>
+                <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
               </div>
             </div>
           </div>
@@ -236,23 +269,23 @@
       </div>
     </section>
     <!-- Contact -->
-    <section class="contact">
+    <section id="contact" class="contact fade-in">
       <h3 class="section-title">Get in Touch</h3>
       <form id="contactForm" class="contact-form">
         <div class="form-group">
-          <input type="text" id="name" placeholder=" " required />
+          <input type="text" id="name" name="name" placeholder=" " required />
           <label for="name">Name</label>
         </div>
         <div class="form-group">
-          <input type="email" id="email" placeholder=" " required />
+          <input type="email" id="email" name="email" placeholder=" " required />
           <label for="email">Email</label>
         </div>
         <div class="form-group">
-          <textarea id="message" placeholder=" " required></textarea>
+          <textarea id="message" name="message" placeholder=" " required></textarea>
           <label for="message">Message</label>
         </div>
-        <button type="submit" class="submit-btn">Send Message</button>
-        <p class="loading">Sending message...</p>
+        <button type="submit" class="submit-btn cta-btn">Send Message</button>
+        <div id="contact-status" class="mt-3"></div>
       </form>
     </section>
     
@@ -286,5 +319,6 @@
       </div>
     </footer>
     <script src="script.js"></script>
+    <!-- Removed Custom Cursor -->
   </body>
 </html>
